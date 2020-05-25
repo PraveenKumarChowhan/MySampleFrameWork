@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="1" total="2" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="SampleTest" duration-ms="14916" started-at="2020-05-22T07:11:20Z" finished-at="2020-05-22T07:11:35Z">
+    <groups>
+    </groups>
+    <test name="Sample" duration-ms="14916" started-at="2020-05-22T07:11:20Z" finished-at="2020-05-22T07:11:35Z">
+      <class name="my.FrameWork.Test.FBLoginTest">
+        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:my.FrameWork.Test.FBLoginTest@3c01cfa1]" name="setUp" is-config="true" duration-ms="9034" started-at="2020-05-22T07:11:20Z" finished-at="2020-05-22T07:11:29Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="logFB(java.util.Hashtable)[pri:0, instance:my.FrameWork.Test.FBLoginTest@3c01cfa1]" name="logFB" duration-ms="4659" started-at="2020-05-22T07:11:29Z" data-provider="inputData" finished-at="2020-05-22T07:11:34Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{PassWord=praveenc, UserName=9985244023}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- logFB -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:my.FrameWork.Test.FBLoginTest@3c01cfa1]" name="tearDown" is-config="true" duration-ms="649" started-at="2020-05-22T07:11:34Z" finished-at="2020-05-22T07:11:35Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- my.FrameWork.Test.FBLoginTest -->
+    </test> <!-- Sample -->
+  </suite> <!-- SampleTest -->
+</testng-results>
