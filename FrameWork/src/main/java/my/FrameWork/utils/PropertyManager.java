@@ -40,5 +40,12 @@ public class PropertyManager {
 		System.out.println(password);
 		return password;
 	}
+	
+	public String getBrowser()
+	{
+		String browser =prop.getProperty("browser");
+		System.out.println(browser);
+		return browser;
+	}
 
 }

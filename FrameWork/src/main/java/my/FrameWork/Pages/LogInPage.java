@@ -25,7 +25,7 @@ public class LogInPage {
 	@FindBy(id="pass")
 	private WebElement ipPassWord;
 
-	@FindBy(id="loginbutton")
+	@FindBy(id="loginbutton1")
 	private WebElement btnLogin;
 
 	@Step("Enter the user : {0}")
