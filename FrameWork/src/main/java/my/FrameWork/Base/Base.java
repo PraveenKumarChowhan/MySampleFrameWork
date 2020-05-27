@@ -14,6 +14,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.testng.ITestContext;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
@@ -26,7 +27,7 @@ import my.FrameWork.utils.ExcelManager;
 import my.FrameWork.utils.PropertyManager;
 
 public class Base {
-	
+
 	protected WebDriver driver;
 	public static Logger logger;
 	PropertyManager pro=new PropertyManager();
@@ -45,8 +46,8 @@ public class Base {
 		if(br.equals("chrome"))
 		{
 			manager.chromedriver().setup();
-		driver=new ChromeDriver();		
-		
+			driver=new ChromeDriver();		
+
 		}else if(br.equals("firefox"))
 		{
 			manager.firefoxdriver().setup();
@@ -72,9 +73,9 @@ public class Base {
 	{
 		driver.quit();
 	}
-	
-	
-	
+
+
+
 	//public Object[][] getData(Method m)
 	public Object[][] getData(String name)
 	{
@@ -86,7 +87,20 @@ public class Base {
 		System.out.println("Hello");
 		return data;
 	}
-	
+
+	@DataProvider(name="inputdata")
+	public Object[][] getTestData(Method name)
+	{
+		//String mName=
+		Object[][] data=null;
+		//String name=m.getName();
+		System.err.println(name);		
+		data=xls.getTestData(name.getName());
+		System.out.println("Hello");
+		return data;
+	}
+
+
 	public static void capturedScreenshot(WebDriver driver,String testName) throws IOException
 	{
 		TakesScreenshot ts=(TakesScreenshot)driver;
@@ -95,11 +109,12 @@ public class Base {
 		FileUtils.copyFile(source, target);
 		System.out.println("SREENSHOT TAKEN");
 	}
-	
-	
-	
-public static synchronized WebDriver getDriver()
-{
-	return driver1.get();
+
+
+
+	public static synchronized WebDriver getDriver()
+	{
+		return driver1.get();
 	}
+	
 }

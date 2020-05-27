@@ -75,7 +75,8 @@ public class ExcelManager {
 
 		Hashtable<String, String> data = null;
 		Object data1[][] = null;
-		data1 = new Object[getRowCount()][0];
+		int index = 0;
+		data1 = new Object[1][1];
 		for (int i = 1; i < getRowCount(); i++) {
 			data = new Hashtable<String, String>();
 			String actTM = sheet.getRow(i).getCell(0).getStringCellValue();
@@ -86,8 +87,11 @@ public class ExcelManager {
 					// data1.put(key1, value1);
 					data.put(key1, value1);
 				}
+				data1[index][0] = data;
+				index++;
+				break;
 			}
-			data1[1][0] = data;
+			
 		}
 
 		return data1;
