@@ -6,6 +6,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 
+import io.qameta.allure.Allure;
 import io.qameta.allure.Step;
 import my.FrameWork.utils.LogUtil;
 
@@ -24,7 +25,7 @@ public class LogInPage {
 	@FindBy(id="email")
 	private WebElement ipUserName;
 
-	@FindBy(id="pass1")
+	@FindBy(id="pass")
 	private WebElement ipPassWord;
 
 	@FindBy(id="loginbutton")
@@ -35,27 +36,28 @@ public class LogInPage {
 	public void enterUserName(String userName)
 	{
 		ipUserName.sendKeys(userName);
-		LogUtil.log1("Entered user ");
+		//Allure.addAttachment("User", "Entered");
+		Allure.description("user Enterd");		
 	}
 	@Step("Enter the password :")
 	public void enterPasword(String passWord)
 	{
-		ipPassWord.sendKeys(passWord);
-		LogUtil.log1("Entered password");
+		Allure.description("password Enterd");
+		ipPassWord.sendKeys(passWord);	
+		Allure.description("password Enterd");		
 	}
 	@Step("Click on Login button")
 	public void clickOnLogInButton()
 	{
-		btnLogin.click();
-		LogUtil.log1("Clicked on Login Button");
+		btnLogin.click();				
 	}
 	
 	@Step("verify Page title:")
 	public void verifyTitle(String exp)
 	{
 		String act=driver.getTitle();
-		System.out.println("Title of the page : "+ act);
-		LogUtil.log1("Actual : "+act +" and "+exp+" should be equal...");
+		System.out.println("Title of the page : "+ act);		
+		Allure.description("Actual : "+act +" and "+exp+" should be equal...");
 		Assert.assertEquals(act, exp,"Shod be equal");
 		
 	}
